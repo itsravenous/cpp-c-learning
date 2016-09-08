@@ -1,3 +1,6 @@
+SharkMainSwift: Shark.o SharkWrapper.h SharkWrapper.o
+	swiftc -import-objc-header SharkWrapper.h SharkMain.swift SharkWrapper.o Shark.o -o bin/SharkMainSwift
+
 SharkMain: Shark.o SharkWrapper.o SharkMain.o
 	g++ SharkMain.o SharkWrapper.o Shark.o -o bin/SharkMain
 
@@ -10,3 +13,5 @@ SharkWrapper.o: SharkWrapper.h SharkWrapper.cc
 SharkMain.o: SharkMain.c
 	gcc -c SharkMain.c -o SharkMain.o
 
+clean:
+	rm *.o bin/*
