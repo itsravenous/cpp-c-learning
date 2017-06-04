@@ -1,0 +1,6 @@
+*.o
+*.so
+incl/*.gch
+bin
+lib
+
